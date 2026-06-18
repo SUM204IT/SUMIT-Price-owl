@@ -52,7 +52,7 @@ const NavBar = () => {
                 {/* Next.js <Image/> component ki jagah normal HTML <img> tag */}
                 <img
                   src={applogo}
-                  alt="App Logo"
+                  alt="App logo"
                   className="w-10 h-10 object-contain"
                 />
                 <div
