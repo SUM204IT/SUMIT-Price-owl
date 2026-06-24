@@ -8,14 +8,11 @@ app.set("trust proxy", 1);
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    // origin: [
-    //     "http://localhost:5173",
-    //     "https://bank-transaction-system-nu.vercel.app"
-    // ],
-    origin: true,
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: [
+        "http://localhost:5173",
+        "https://sumit-price-owl.vercel.app" // apna actual Vercel URL
+    ],
+    credentials: true
 }));
 
 const productRoutes = require("../src/routes/Product.routes");
