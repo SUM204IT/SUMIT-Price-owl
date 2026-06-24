@@ -90,7 +90,7 @@ const loginUserController = async (req, res) => {
     return res.cookie("token", token,{
       httpOnly: true,     // Prevents JS access (more secure)
       secure: true,      // Set to true if using HTTPS
-      sameSite: "lax",    // Helps protect against CSRF
+      sameSite: "none",    // Helps protect against CSRF
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     }).status(200).json({
         success: true,

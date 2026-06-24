@@ -3,13 +3,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import applogo from "../assets/priceowllogoo.png"
 import { useAuth } from "../hooks/useAuth";
+import { useContext } from "react";
+import { AuthContext } from "../auth.context";
 
 const NavBar = () => {
   const navigate = useNavigate(); // Next.js useRouter ki jagah
   const location = useLocation(); // Next.js usePathname ki jagah
   const pathname = location.pathname;
 
-  const {user} = useAuth();
+  const {user} = useContext(AuthContext);
 
   // Fake auth variables (Next.js Clerk variables ko replace karne ke liye taaki code crash na ho)
   // Jab aap Firebase/Supabase/Context API use karo, toh inko true/false state se pass kar dena
